@@ -1,0 +1,83 @@
+body{
+width: 100%;
+height: 100vh;
+background-color: #1b1b1b;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.btn,.btn2{
+    background-color: #d94047;
+    border: none;
+    width: 120px;
+    color: white;
+    font-size: 18px;
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+    transform-origin: center;
+    z-index: 1;
+    border: 2px solid #d94047;
+}
+.btn:hover{
+    border: 2px solid purple;
+    cursor: pointer;
+}
+.btn:before{
+    content: "";
+    transition: 0.5s ease;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scale(0); 
+    z-index: -1;
+
+    /* transform: scaleX(0); */
+    /* transform-origin: left;   */
+}
+.btn:hover::before{
+    transform: scale(1);
+    /* transform: scaleX(1); */
+    background-color: #1b1b1b;
+}
+
+.btn2,.btn2:hover{
+    border: none;
+    cursor: pointer;
+}
+.btn2::before{
+    content: "";
+    transition: 0.5s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    z-index: -1;
+    background-color: purple;
+}
+.btn2:hover::before{
+    height: 100%;
+}
+.btn3{
+    background-color: white;
+}
+.btn3::before{
+    background: linear-gradient(to top,#3b3b79 0,#d84148 100%) !important;
+}
+
+
+/* text truncate */
+
+.title {
+    color: white !important;
+    text-shadow: 0px 0px 1px black !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    
+}
