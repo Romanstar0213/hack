@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login-style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav id="navbar-top" class="navbar navbar-expand-lg navbar-dark bg-dark header">
+        <div class="container-fluid header-itmes">
+            <a class="navbar-brand" href="#">
+                <img src="pngwing.com.png" class="logo" alt=""><span class="logotext">E-Store</span>
+            </a>
+
+            <br />
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon navbar-dark"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0 mr-auto navul">
+                    <li class="nav-item mx-3">
+                        <a class="nav-link active mya" aria-current="page" href="#" onclick="home()">Home</a>
+                    </li>
+                    <li class="nav-item dropdown  mx-3">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <span class="droptxt mya">Category</span>
+                        </a>
+                        <ul class="dropdown-menu dropbg">
+                            <li><a class="dropdown-item drop" href="#home" onclick="recall('menclothing')">Men's
+                                    Clothes</a></li>
+                            <li><a class="dropdown-item drop" href="#" onclick="recall('womenclothing')">Women's
+                                    Clothes</a></li>
+                            <li><a class="dropdown-item drop" href="#" onclick="recall('electronics')">Electronics</a>
+                            </li>
+                            <li><a class="dropdown-item drop" href="#" onclick="recall('jewelery')">Jewelery</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link active mya" aria-current="page" href="#" onclick="home()">About</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link active mya" aria-current="page" href="#" onclick="home()">Contact&nbsp;Us</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex searchdiv">
+                    <input id="input" class="form-control me-2 search-bar mybar" type="search" value=""
+                        placeholder="Search" aria-label="Search">
+                    <button onclick="srch()" class="btn btn-outline-danger searchbtn">Search</button>
+                    <div class="ms-2 d-flex">
+                        <h6 id="logincom" class="px-2 logincom d-none">12345678910</h6>
+                        <button id="showlogin" onclick="showlogin()" class="btn btn-outline-danger login-btn">signUp</button>
+                        <button id="showlogin" onclick="showadmin()" class="btn ms-2 btn-outline-danger login-btn ">admin</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- welcome box -->
+    <div id="welcome" class="welcome">
+        <h1 class="wel">Welcome To E-Store</h1>
+        <h2 class="w">Search it Buy it</h2>
+    </div>
+    <!-- welcome box -->
+
+    <!-- admin -->
+    
+    <div class="admin d-none" id="admin">
+        <div class="loginmain anim">
+            <div class="card logincard m-3" style="width: 40rem;">
+                <div class="card-body">
+                    <div class="bt d-flex"><button id="adminclosebtn" onclick="hideadmin()" class="closebutton">X</button></div>
+
+                    <h1 class="loginh1 mb-4">E-Store</h1>
+                    <div id="unamediv">
+                        <h5 class="card-title title mt-3">Product Name</h5>
+                        <input class="logininput mb-4" type="text" id="pname" value="" maxlength="10">
+                    </div>
+                    <h5 class="card-title title mt-3 pb-1">Category</h5>
+                    <input class="logininput" type="text" id="pcategory" value="">
+                    <h5 class="card-title title mt-3">Description</h5>
+                    <input class="logininput" type="text" id="pdescription" value="">
+                    <h5 class="card-title title mt-3 pb-1">Image</h5>
+                    <input type="file" class="pfile" id="pfile" value="" placeholder="choose file">file
+                    ;<div>
+
+                        <a id="btn" href="#" class="btn loginbtn mt-3" onclick="upload()">Upload</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- admin -->
+
+
+    <div id="notfound" class="notfound d-none">
+        <h1 class="notfound-text">No Result Found</h1>
+    </div>
+
+    <div id="networkerror" class="notfound d-none">
+        <h1 class="notfound-text">Network Error :(</h1>
+    </div>
+
+
+    <div class="parent">
+        <div id="main" class="main">
+            <div id="data" class="data-box py-4 d-flex justify-content-center">
+                <!-- javascript data -->
+
+
+                <!-- <div class="card mycard m-3" style="width: 20rem;">
+                <div class="imagediv">
+
+                    <img class="card-img-top myimage" src="https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
+                        alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <div class="tit">
+                     <h5 class="card-title title">dfgdfgdgdgf</h5>
+                    </div>
+                    <p class="card-text myp">zdddfvxcx</p>
+                    <p class="card-text myp2">xcxcxxc</p>
+                    <a href="#" class="btn btn-primary">zddsd fc</a>
+                </div>
+            </div> -->
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- togggggg -->
+
+
+    <div id="togmain" class="togmain d-flex justify-content-center align-items-center d-none">
+        <div class="togbox card m-3 col-lg-10 col-md-10 col-sm-11">
+            <div id="togimagediv" class="imagediv togimagediv">
+                <div class="bt d-flex"><button id="closebtn" class="closebutton">X</button></div>
+                <h5 id="togtitle" class="card-title title togtitle"></h5>
+                <h5 class="card-title title pb-1">Category: <span id="togcategory"></span></h5>
+                <p class="card-text myp2">Price: <span id="togprice" class="myp"></span></p>
+                <p class="card-text myp2">Rating: <span id="tograting" class="text-warning"></span></p>
+
+            </div>
+            <div class="card-body py-5">
+
+                <h5 class="card-title title">Description:</h5>
+                <p id="togdescription" class="card-text myp2"></p>
+                <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- loader -->
+    <div id="loadermain" class="loadermain d-none">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <div id="loginpage" class="loginpage d-none">
+        <div class="loginmain anim">
+            <div class="card logincard m-3" style="width: 25rem;">
+                <div class="card-body">
+                    <h1 class="loginh1 mb-4">E-Store</h1>
+                    <div id="unamediv">
+                        <h5 class="card-title title mt-3">User Name</h5>
+                        <input class="logininput mb-4" type="text" id="uname" value="" maxlength="10">
+                    </div>
+                    <h5 class="card-title title mt-3">Email</h5>
+                    <input class="logininput" type="text" id="email" value="">
+                    <p id="p1" class="c card-text myp mt-1 invisible">this email is already registered..</p>
+                    </p>
+                    <h5 class="card-title title mt-3">Password</h5>
+                    <input class="logininput" type="password" id="password" value="">
+                    <p id="p2" class="c card-text mt-1 invisible">Password is too weak..</p>
+                    <a id="btn" href="#" class="btn loginbtn" onclick="signup()">Sign Up</a>
+                    <div class="dont d-flex mt-2">
+                        <p id="para" class="card-text myp par me-2">already have an account</p>
+                        <a id="anc" class="an" href="#" onclick="toggle()">log in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- footer -->
+    <div class="ftr-container">
+        <div class="ftrbox">
+            <div class="ftb ftb1 mftb ">
+                <h2 class="fh2 brand mb-1">Supportive Services</h2>
+                <p class="ftrp">Supportive services means services provided by the service provider to help residents
+                    enhance their way of living and achieve self-sufficiency. Supportive Services may be provided
+                    directly by the Owner or thrbggough coordination with existing service agencies and may be delivered
+                    through a combination of both on- and off- site service delivery mechanisms, with the provision that
+                    an on-site service coordination capacity must be maintained. For the purposes of scoring, ADOH may
+                    determine that certain Supportive Services must be offered on-site to obtain points in a particular
+                    Project scoring category..</p>
+            </div>
+            <div class="mediafooter">
+                <div class="ftb mft">
+                    <h2 class="fh2 brand">Quick Links</h2>
+                    <div class="line fline"></div>
+                    <ul class="ful">
+                        <li><a class="flink" href="">Home</a></li>
+                        <li><a class="flink" href="">About Us</a></li>
+                        <li><a class="flink" href="">Publications</a></li>
+                        <li><a class="flink" href="">Get a Franchise</a></li>
+                        <li><a class="flink" href="">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="ftb mft">
+                    <h2 class="fh2 brand">Contact Us</h2>
+                    <div class="line fline"></div>
+                    <ul class="ful">
+                        <li><a class="flink" href="">04235850931</a></li>
+                        <li><a class="flink" href="">04235850931</a></li>
+                        <li><a class="flink" href="">04235850931</a></li>
+                        <li><a class="flink" href="">04235850931</a></li>
+                        <li><a class="flink" href="">romanstar295@gmail.com</a></li>
+                        <li><a class="flink" href="">23 Usman Block, New Garden Town, Karcahi, Pakistan</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+
+
+
+
+
+
+    <!-- <button onclick="srch()">search</button>
+    <input id="search" value="" type="text" name="" id="">
+    <div id="bodyy">
+    </div> -->
+    <!-- <button onclick="srch()" class="btn btn-outline-danger searchbtn" type="submit">Search</button> -->
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="app.js" type="module"></script>
+
+</body>
+
+</html>
